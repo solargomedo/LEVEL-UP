@@ -1,0 +1,368 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+body {
+  min-height: 100vh;
+  background: url(/img/1000059933.png) center fixed;
+  background-size: cover;
+  color: #ffffff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 62.5em;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3b3b3b;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.img-logo {
+  height: 5em;
+}
+
+.titulo {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #ff2e92;
+}
+
+.titulo2 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #ff2e92;
+  margin-left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.header form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.search {
+  width: 100%;
+  height: 2.5em;
+  background: #005cff;
+  padding: 0 1.25em;
+  border-radius: 0.625em;
+  border: none;
+  font-size: 0.9375em;
+  margin: 1.25em 0;
+  color: #ffffff;
+}
+
+.search:hover {
+  border: 0.125em solid rgb(21, 201, 30);
+  cursor: pointer;
+}
+
+.search::placeholder {
+  color: #ffffff;
+}
+
+.header-right {
+  min-width: 120px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.registrate {
+  display: inline-block;
+  background-color: #ff2e92;
+  padding: 0.625em 1.25em;
+  font-size: 0.9375em;
+  border: 0.125em solid rgb(23, 223, 16);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.registrate:hover {
+  background-color: #ff81f9;
+}
+
+main {
+  width: 100%;
+}
+
+.bar-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #404040;
+  border-radius: 0.3125em;
+  width: 100%;
+  padding: 1.25em;
+}
+
+.bar-container select,
+.select-juego,
+.select-carta,
+.select-gamer,
+.select-ropa,
+.select-perifericos {
+  border: none;
+  background-color: #ff2e92;
+  padding: 0.625em;
+  font-size: 0.9375em;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ropa {
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ff2e92;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 0.125em;
+  border: 1px solid #15ff00;
+  margin-top: 40px;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.card-compra {
+  width: 11.25em;
+  height: 13.75em;
+  background: #404040;
+  border-radius: 0.625em;
+  margin-top: 1.25em;
+  box-sizing: border-box;
+  border: 0.125em solid rgb(23, 223, 16);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+.card-compra:hover {
+  transform: scale(1.1);
+}
+
+.card-body img {
+  width: 100%;
+  height: 13.75em;
+  border-radius: 0.625em;
+  display: block;
+  object-fit: cover;
+}
+
+footer {
+  font-size: 0.9em;
+  margin-top: 1em;
+  padding: 0.75em 0;
+  background-color: #3b3b3b;
+  text-align: center;
+  opacity: 0.8;
+  color: #ffffff;
+}
+
+.contenedor-footer {
+  max-width: 62.5em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.footer-seccion {
+  max-width: 300px;
+}
+
+.footer-seccion ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.footer-seccion li {
+  margin: 4px 0;
+}
+
+.form-content {
+  width: 100%;
+  max-width: 450px;
+  background-color: #222222;
+  padding: 50px 60px 70px;
+  text-align: center;
+  border-radius: 25px;
+  margin: 50px auto;
+  border: 1px solid #15eb0d;
+}
+
+.form-content h1 {
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: #ff2e92;
+  position: relative;
+}
+
+.form-content h1::after {
+  content: '';
+  width: 30px;
+  height: 4px;
+  border-radius: 3px;
+  background: #ff2e92;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  background-color: #ffffff;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+}
+
+.input-field input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  padding: 18px 15px;
+  color: #000000;
+}
+
+.btn-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#signUp {
+  flex-basis: 48%;
+  font-size: 16px;
+  background-color: #005cff;
+  color: #ffffff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.volver {
+  flex-basis: 48%;
+  font-size: 16px;
+  background-color: #ff2e92;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+}
+
+.volver:hover {
+  background-color: #ff81f9;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 0.875em;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.75em;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bar-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .header {
+    gap: 10px;
+  }
+
+  .header-center {
+    width: 100%;
+    padding: 0;
+  }
+
+  .bar-container select {
+    width: 100%;
+  }
+
+  .board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-compra {
+    width: 90%;
+    max-width: 300px;
+  }
+}
