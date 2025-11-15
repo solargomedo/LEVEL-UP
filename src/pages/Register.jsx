@@ -13,61 +13,72 @@ const initialForm = {
 const RegisterPage = () => {
   const [formValues, setFormValues] = useState(initialForm);
   const [errors, setErrors] = useState({});
+  const [serverError, setServerError] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
+
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
+    setServerError('');
   };
 
   const validate = () => {
     const validationErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
-    if (!formValues.nombre.trim()) {
-      validationErrors.nombre = 'El nombre es obligatorio.';
-    }
-
+    if (!formValues.nombre.trim()) validationErrors.nombre = 'El nombre es obligatorio.';
     if (!formValues.correo.trim()) {
-      validationErrors.correo = 'El correo electrónico es obligatorio.';
+      validationErrors.correo = 'El correo es obligatorio.';
     } else if (!emailRegex.test(formValues.correo.trim())) {
-      validationErrors.correo = 'Ingresa un correo electrónico válido.';
+      validationErrors.correo = 'Correo inválido.';
     }
 
     if (!formValues.password.trim()) {
       validationErrors.password = 'La contraseña es obligatoria.';
-    } else if (!passwordRegex.test(formValues.password.trim())) {
-      validationErrors.password = 'Debe tener al menos 6 caracteres, una letra y un número.';
     }
 
     if (!formValues.edad.trim()) {
       validationErrors.edad = 'La edad es obligatoria.';
-    } else {
-      const numericAge = Number(formValues.edad);
-      if (Number.isNaN(numericAge) || numericAge < 18) {
-        validationErrors.edad = 'Eres menor de edad.';
-      }
+    } else if (Number(formValues.edad) < 18) {
+      validationErrors.edad = 'Debe ser mayor de edad.';
     }
 
     return validationErrors;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
-      let message = 'Registro exitoso';
-      if (formValues.correo.trim().toLowerCase().endsWith('@duocuc.cl')) {
-        message += '\n¡Obtienes un 20% de descuento de por vida por tu correo @duocuc.cl!';
+    if (Object.keys(validationErrors).length > 0) return;
+
+    try {
+      const response = await fetch("http://localhost:8081/api/v1/usuarios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setServerError(errorData.error || "Error en el servidor");
+        return;
       }
-      window.alert(message);
-      navigate('/post-registro');
+
+      // Si llega aquí, el registro fue exitoso
+      window.alert("Registro exitoso");
+      navigate("/post-registro");
+
+    } catch (error) {
+      console.error("Error:", error);
+      setServerError("Error al conectar con el servidor");
     }
   };
 
@@ -77,6 +88,11 @@ const RegisterPage = () => {
         <Header variant="register" />
         <div className="form-content">
           <h1 id="title">REGÍSTRATE</h1>
+
+          {serverError && (
+            <p style={{ color: "red", fontWeight: "bold" }}>{serverError}</p>
+          )}
+
           <form onSubmit={handleSubmit} noValidate>
             <div className="input-group">
               <div className="input-field">
@@ -90,6 +106,7 @@ const RegisterPage = () => {
                 />
                 {errors.nombre && <small className="error">{errors.nombre}</small>}
               </div>
+
               <div className="input-field">
                 <input
                   id="correo"
@@ -101,6 +118,7 @@ const RegisterPage = () => {
                 />
                 {errors.correo && <small className="error">{errors.correo}</small>}
               </div>
+
               <div className="input-field">
                 <input
                   id="password"
@@ -112,12 +130,12 @@ const RegisterPage = () => {
                 />
                 {errors.password && <small className="error">{errors.password}</small>}
               </div>
+
               <div className="input-field">
                 <input
                   id="edad"
                   name="edad"
                   type="number"
-                  min="1"
                   placeholder="Edad"
                   value={formValues.edad}
                   onChange={handleChange}
@@ -125,17 +143,15 @@ const RegisterPage = () => {
                 {errors.edad && <small className="error">{errors.edad}</small>}
               </div>
             </div>
+
             <div className="btn-field">
-              <button id="signUp" type="submit">
-                Registro
-              </button>
-              <Link className="volver" to="/">
-                Volver
-              </Link>
+              <button id="signUp" type="submit">Registro</button>
+              <Link className="volver" to="/">Volver</Link>
             </div>
           </form>
         </div>
       </div>
+
       <Footer />
     </>
   );
