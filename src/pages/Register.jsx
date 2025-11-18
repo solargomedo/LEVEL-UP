@@ -58,7 +58,7 @@ const RegisterPage = () => {
     if (Object.keys(validationErrors).length > 0) return;
 
     try {
-      const response = await fetch("http://localhost:8081/api/v1/usuarios", {
+      const response = await fetch("http://localhost:8080/api/v1/usuarios", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

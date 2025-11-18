@@ -3,13 +3,12 @@ import CategorySelects from './CategorySelects.jsx';
 import ProductSection from './ProductSection.jsx';
 import Footer from './Footer.jsx';
 import { productSections } from '../data/sections.js';
-import ProductList from './ProductList.jsx';
 import { useState } from 'react';
 
 const Storefront = ({ headerVariant }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  
+  // mostrar "Ver más" sólo si headerVariant === 'customer' (post-registro)
   const showVerMas = headerVariant === 'customer';
 
   return (
@@ -20,8 +19,7 @@ const Storefront = ({ headerVariant }) => {
           <section>
             <CategorySelects onSelect={(cat) => setSelectedCategory(cat)} />
             
-            <h2 style={{ color: '#fff', marginTop: 20 }}>{selectedCategory ? `Filtrando: ${selectedCategory}` : 'Productos'}</h2>
-            <ProductList categoria={selectedCategory} />
+
             
             {productSections.map((section) => (
               <ProductSection key={section.id} section={section} showVerMas={showVerMas} />
