@@ -9,7 +9,7 @@ import { useState } from 'react';
 const Storefront = ({ headerVariant }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // mostrar "Ver más" sólo si el headerVariant indica la vista "customer"
+  
   const showVerMas = headerVariant === 'customer';
 
   return (
@@ -19,10 +19,10 @@ const Storefront = ({ headerVariant }) => {
         <main>
           <section>
             <CategorySelects onSelect={(cat) => setSelectedCategory(cat)} />
-            {/* Productos traídos desde el microservicio */}
+            
             <h2 style={{ color: '#fff', marginTop: 20 }}>{selectedCategory ? `Filtrando: ${selectedCategory}` : 'Productos'}</h2>
             <ProductList categoria={selectedCategory} />
-            {/* Secciones estáticas (galería): pasamos showVerMas para controlar botón */}
+            
             {productSections.map((section) => (
               <ProductSection key={section.id} section={section} showVerMas={showVerMas} />
             ))}

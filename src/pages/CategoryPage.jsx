@@ -14,7 +14,7 @@ export default function CategoryPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // resolver candidatos simple: title o raw
+ 
   const resolveCandidates = (param) => {
     if (!param) return [];
     const list = [param];

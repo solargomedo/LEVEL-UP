@@ -1,4 +1,4 @@
-/* ======= Estilos globales (modificado) ======= */
+
 * {
   padding: 0;
   margin: 0;
@@ -117,7 +117,7 @@ main {
   width: 100%;
 }
 
-/* barra de selects */
+
 .bar-container {
   display: flex;
   flex-wrap: wrap;
@@ -145,20 +145,18 @@ main {
   text-align: center;
 }
 
-/* ===== Sección header y título ===== */
-/* Añadimos clase .section-header para separar título/btn del grid.
-   Si usas un wrapper inline en ProductSection.jsx, cambia a className="section-header" */
+
 .section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin: 22px 0 18px; /* espacio superior / inferior para separar del grid */
+  margin: 22px 0 18px; 
   position: relative;
   z-index: 2;
 }
 
-/* título principal de sección: .ropa */
+
 .ropa {
   text-align: left;
   font-size: 1.5em;
@@ -169,11 +167,11 @@ main {
   padding: 8px 15px;
   border-radius: 0.125em;
   border: 1px solid #15ff00;
-  /* margen para separar del grid y evitar solapamiento con animaciones */
+  
   margin: 0 0 30px;
 }
 
-/* board (antiguo grid de cards) */
+
 .board {
   display: flex;
   flex-wrap: wrap;
@@ -181,7 +179,7 @@ main {
   margin-top: 5px;
 }
 
-/* tarjeta pequeña usada en home (mantenemos comportamiento pero con z-index para hover) */
+
 .card-compra {
   width: 11.25em;
   height: 13.75em;
@@ -199,7 +197,7 @@ main {
 
 .card-compra:hover {
   transform: scale(1.1);
-  z-index: 5; /* sube por encima del título y elementos vecinos */
+  z-index: 5; 
   box-shadow: 0 8px 20px rgba(0,0,0,0.45);
 }
 
@@ -246,7 +244,7 @@ footer {
   margin: 4px 0;
 }
 
-/* Formularios y estilos relacionados */
+
 .form-content {
   width: 100%;
   max-width: 450px;
@@ -341,17 +339,17 @@ footer {
   margin-bottom: 10px;
 }
 
-/* ===== Página de categoría: grid y tarjetas grandes ===== */
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
-  margin-top: 28px; /* más espacio para evitar contacto con títulos */
+  margin-top: 28px;
   align-items: start;
   padding-top: 6px;
 }
 
-/* Tarjeta general (usa paleta similar al site) */
+
 .product-card {
   background: #404040;
   border-radius: 8px;
@@ -367,14 +365,14 @@ footer {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Al hover elevar la tarjeta por encima del título */
+
 .product-card:hover {
   transform: scale(1.06);
   z-index: 6;
   box-shadow: 0 10px 22px rgba(0,0,0,0.5);
 }
 
-/* Contenedor de imagen (área grande) */
+
 .product-image-container {
   background: #4c4c53;
   display: flex;
@@ -384,7 +382,7 @@ footer {
   position: relative;
 }
 
-/* Imagen: centrada y contain */
+
 .product-image-container img {
   max-width: 86%;
   max-height: 86%;
@@ -393,7 +391,6 @@ footer {
   filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
 }
 
-/* Badge (Agotado u otros estados) */
 .product-badge {
   position: absolute;
   top: 12px;
@@ -408,7 +405,7 @@ footer {
   border: 1px solid rgba(255,255,255,0.06);
 }
 
-/* Contenido inferior: nombre y precio */
+
 .product-info {
   padding: 12px 14px 18px;
   display: flex;
@@ -428,7 +425,7 @@ footer {
   font-weight: 600;
 }
 
-/* Precio destacado */
+
 .product-price {
   color: #15ff00;
   font-weight: 800;
@@ -436,7 +433,7 @@ footer {
   font-size: 1rem;
 }
 
-/* Soporte responsive: ajustar altura de imagen en pantallas pequeñas */
+
 @media (max-width: 768px) {
   .product-image-container {
     height: 220px;
@@ -449,7 +446,7 @@ footer {
   }
 }
 
-/* Media queries generales */
+
 @media (max-width: 1200px) {
   body {
     font-size: 0.875em;
@@ -501,7 +498,7 @@ footer {
   }
 }
 
-/* Evita que el navegador pegue el elemento al tope al hacer scroll a un ancla */
+
 section[id] {
   scroll-margin-top: 100px;
 }
