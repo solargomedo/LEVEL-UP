@@ -49,38 +49,52 @@ const RegisterPage = () => {
 
     return validationErrors;
   };
-
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const validationErrors = validate();
-    setErrors(validationErrors);
+  event.preventDefault();
+  const validationErrors = validate();
+  setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length > 0) return;
+  if (Object.keys(validationErrors).length > 0) return;
 
-    try {
-      const response = await fetch("http://localhost:8080/api/v1/usuarios", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formValues),
-      });
+  try {
+    // 1. REGISTRO
+    const response = await fetch("http://localhost:8080/api/v1/usuarios", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues),
+    });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        setServerError(errorData.error || "Error en el servidor");
-        return;
-      }
-
-      // Si llega aquí, el registro fue exitoso
-      window.alert("Registro exitoso");
-      navigate("/post-registro");
-
-    } catch (error) {
-      console.error("Error:", error);
-      setServerError("Error al conectar con el servidor");
+    if (!response.ok) {
+      const errorData = await response.json();
+      setServerError(errorData.error || "Error en el servidor");
+      return;
     }
-  };
+
+    // 2. LOGIN AUTOMÁTICO
+    const loginResponse = await fetch("http://localhost:8080/api/v1/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        correo: formValues.correo,
+        password: formValues.password,
+      }),
+    });
+
+    const token = await loginResponse.text();
+    localStorage.setItem("token", token);
+
+    alert("Registro exitoso");
+    navigate("/post-registro");
+
+  } catch (error) {
+    console.error("Error:", error);
+    setServerError("Error al conectar con el servidor");
+  }
+};
+
+  
 
   return (
     <>
