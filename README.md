@@ -64,3 +64,69 @@ Desarrollar una aplicación web fullstack que permita:
 ## Estructura del Proyecto
 
 ### Frontend
+/src
+/components
+/pages
+/services
+/styles
+App.jsx
+index.js
+
+
+### Backend
+
+
+/src/main/java
+/controller
+/service
+/repository
+/model
+/security
+
+
+---
+
+## Instalación y Ejecución
+
+### Frontend
+
+npm install
+npm start
+
+Backend
+./mvnw spring-boot:run
+
+Pruebas Unitarias
+
+Las pruebas fueron realizadas con:
+
+Jasmine
+
+Karma
+
+Se probaron:
+
+Componentes del frontend
+
+Validación de formularios
+
+Funcionalidad del carrito
+
+Documentación
+
+El proyecto incluye:
+
+Documento ERS
+
+Manual de Usuario
+
+Documentación de API con Swagger
+
+Documento de integración Frontend - Backend
+
+Autores
+
+Solange Argomedo
+
+Cristian Pizarro
+
