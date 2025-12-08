@@ -98,31 +98,31 @@ Backend
 
 Pruebas Unitarias
 
-Las pruebas fueron realizadas con:
+Las pruebas fueron realizadas con
 
 Jasmine
 
 Karma
 
-##Se probaron:
+## Se probaron:
 
-Componentes del frontend
+- Componentes del frontend
 
-Validación de formularios
+- Validación de formularios
 
-Documentación
+- Documentación
 
-##El proyecto incluye:
+## El proyecto incluye
 
-Documento ERS
+- Documento ERS
 
-Manual de Usuario
+- Manual de Usuario
 
-Documentación de API con Swagger
+- Documentación de API con Swagger
 
-Documento de integración Frontend - Backend
+- Documento de integración Frontend - Backend
 
-##Integrantes
+## Integrantes
 
 Solange Argomedo
 
