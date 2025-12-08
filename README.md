@@ -33,8 +33,8 @@ Desarrollar una aplicación web fullstack que permita:
 ### Backend
 - Spring Boot
 - Java
-- JPA / Hibernate
-- MySQL o H2
+- JPA 
+- MySQL 
 - Swagger
 - Spring Security
 - JWT
