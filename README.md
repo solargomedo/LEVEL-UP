@@ -1,27 +1,66 @@
-# LEVEL-UP React
+# Level-UP Store
 
-Tienda LEVEL-UP reconstruida con React y Vite para mantener una sola base de código con routing cliente, componentes reutilizables y los estilos originales del prototipo.
+## Descripción del Proyecto
 
-## Scripts
-- `npm install` para descargar dependencias.
-- `npm run dev` levanta el entorno de desarrollo de Vite.
-- `npm run build` genera la versión optimizada en `dist/`.
-- `npm run preview` sirve el build de producción localmente.
+Level-UP es una tienda online orientada al mundo gamer, donde los usuarios pueden explorar, comprar y gestionar productos relacionados con videojuegos, accesorios y ropa gamer.
 
-## Arquitectura
-- `src/pages` contiene las vistas (`Home`, `Register`, `PostRegister`).
-- `src/components` reúne cabecera, footer, selectores y las tarjetas reutilizables.
-- `src/data/sections.js` centraliza las categorías y la configuración de los selectores.
-- `public/img` guarda todos los recursos estáticos, accesibles vía `/img/...`.
+El proyecto fue desarrollado como parte de la Evaluación Final Transversal de la asignatura Desarrollo Fullstack II.
 
-## Funcionalidades
-- Navegación con React Router para simular las tres pantallas originales.
-- Selectores que hacen scroll suave hacia cada sección del catálogo.
-- Formulario con validaciones (nombre, correo, contraseña y edad) y beneficio automático para correos `@duocuc.cl`.
-- Estilos responsivos mantenidos y organizados en `src/index.css`.
+---
 
-## Próximos pasos sugeridos
-1. Conectar los datos de `sections.js` a una API o CMS para evitar paths hardcodeados.
-2. Reemplazar los `alert` del formulario por un modal o toast más usable.
-3. Agregar pruebas unitarias para la lógica de validación y los componentes críticos.
-# LEVEL-UP
+## Objetivo
+
+Desarrollar una aplicación web fullstack que permita:
+
+- Gestionar productos
+- Registrar y autenticar usuarios
+- Realizar operaciones CRUD
+- Integrar frontend y backend mediante API REST
+- Implementar seguridad con JWT
+
+---
+
+## Tecnologías Utilizadas
+
+### Frontend
+- React
+- HTML5
+- CSS3
+- Bootstrap
+- JavaScript
+- Axios
+
+### Backend
+- Spring Boot
+- Java
+- JPA / Hibernate
+- MySQL o H2
+- Swagger
+- Spring Security
+- JWT
+
+---
+
+## Funcionalidades Principales
+
+### Usuarios
+- Registro de usuarios
+- Inicio de sesión
+- Gestión de roles (USER / ADMIN)
+
+### Productos
+- Listar productos
+- Crear productos
+- Editar productos
+- Eliminar productos
+
+### Seguridad
+- Autenticación con JWT
+- Protección de rutas según rol
+- Manejo seguro de sesiones
+
+---
+
+## Estructura del Proyecto
+
+### Frontend
