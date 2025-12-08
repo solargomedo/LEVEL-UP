@@ -104,17 +104,15 @@ Jasmine
 
 Karma
 
-Se probaron:
+##Se probaron:
 
 Componentes del frontend
 
 Validación de formularios
 
-Funcionalidad del carrito
-
 Documentación
 
-El proyecto incluye:
+##El proyecto incluye:
 
 Documento ERS
 
@@ -124,7 +122,7 @@ Documentación de API con Swagger
 
 Documento de integración Frontend - Backend
 
-Autores
+##Integrantes
 
 Solange Argomedo
 
