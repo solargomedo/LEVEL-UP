@@ -215,9 +215,9 @@ Los datos actuales provienen de `src/data/sections.js` (estructura en el código
 
 ## 8. Dependencias
 
-- `react` ^19
-- `react-dom` ^19
-- `react-router-dom` ^7
+- `react` 
+- `react-dom` 
+- `react-router-dom` 
 - `vite` y plugin `@vitejs/plugin-react`
 
 Los scripts son los definidos en `package.json`:
@@ -230,7 +230,6 @@ Los scripts son los definidos en `package.json`:
 
 ## 9. Limitaciones y supuestos
 
-- No hay backend ni persistencia en esta versión: el registro es client-side y no crea usuarios reales.
 - Las imágenes y recursos están en `public/img` y deben mantenerse cuando se despliegue.
 - Se asume Node.js instalado en la máquina de desarrollo.
 
@@ -251,8 +250,8 @@ Este manual está orientado tanto a usuarios finales (uso de la interfaz) como a
 
 ## Requisitos previos
 
-- Node.js (recomendado v18+).
-- npm (incluido con Node.js) o pnpm/yarn si prefiere.
+- Node.js.
+- npm.
 
 ## Instalación y ejecución (Desarrollador)
 
@@ -266,21 +265,21 @@ cd LEVEL-UP
 2. Instalar dependencias:
 
 ```powershell
-+npm install
+npm install
 ```
 
 3. Ejecutar en modo desarrollo:
 
 ```powershell
-+npm run dev
+npm run dev
 ```
 
-+Abra `http://localhost:5173` (Vite mostrará la URL exacta en consola).
+Abra `http://localhost:5173` (Vite mostrará la URL exacta en consola).
 
 +4. Construir producción (opcional):
 
 ```powershell
-+npm run build
+npm run build
 npm run preview
 ```
 
@@ -323,13 +322,10 @@ npm run preview
 
 ## Contacto / Soporte
 
-Para preguntas sobre la implementación o contribuciones, abra un issue en el repositorio o contacte al desarrollador responsable en la rama `feature/Sol`.
+Para preguntas sobre la implementación o contribuciones, abra un issue en el repositorio o contacte al desarrollador responsable en la rama `feature/Sol`, `feature/cristian`.
 
 ---
 
-Fin de la documentación.
-
-*** End Patch
 
 ## Integrantes
 
