@@ -124,8 +124,7 @@ Karma
 
 - Documento de integración Frontend - Backend
 
-*** Begin Patch
-*** Add File: docs/ERS_MANUAL.md
+
 # DOCUMENTACIÓN: ERS y Manual de Usuario
 
 Fecha: 2025-12-11
